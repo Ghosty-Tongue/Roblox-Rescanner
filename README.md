@@ -19,7 +19,7 @@ Contributions to Roblox-Rescanner are welcome! Whether it's bug fixes, feature e
 
 ## Inspiration
 
-Roblox-Rescanner was inspired by Maple (aka ToastedCharies) and their video [The Unused Content of ROBLOX](https://www.youtube.com/watch?v=vcZjf3ZL31M). Special thanks to Maple for opening up the world of unused content on Roblox.
+Roblox-Rescanner was inspired by Maple (aka ToastedCherries) and their video [The Unused Content of ROBLOX](https://www.youtube.com/watch?v=vcZjf3ZL31M). Special thanks to Maple for opening up the world of unused content on Roblox.
 
 ## License
 
