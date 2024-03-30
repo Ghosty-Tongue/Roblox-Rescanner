@@ -1,5 +1,6 @@
 import requests
 import time
+from datetime import datetime
 
 def get_asset_details(asset_id):
     url = f"https://economy.roblox.com/v2/assets/{asset_id}/details"
@@ -11,13 +12,20 @@ def get_asset_details(asset_id):
         print(f"Failed to fetch details for asset ID {asset_id}. Status code: {response.status_code}")
         return None
 
+def format_time(timestamp):
+    try:
+        parsed_time = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
+        return parsed_time.strftime("%Y-%m-%d %H:%M:%S")
+    except ValueError:
+        return timestamp
+
 def save_to_text(creator_id, asset_id, details):
     with open(f"{creator_id}_asset_details.txt", "a") as file:
         file.write(f"Asset ID: {asset_id}\n")
         file.write(f"Name: {details.get('Name', '')}\n")
         file.write(f"Description: {details.get('Description', '')}\n")
-        file.write(f"Created: {details.get('Created', '')}\n")
-        file.write(f"Updated: {details.get('Updated', '')}\n\n")
+        file.write(f"Created: {format_time(details.get('Created', ''))}\n")
+        file.write(f"Updated: {format_time(details.get('Updated', ''))}\n\n")
 
 def get_asset_details_for_creator_type(asset_id, creator_type_id):
     asset_details = get_asset_details(asset_id)
