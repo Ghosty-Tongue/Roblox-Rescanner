@@ -47,7 +47,7 @@ def main():
                 if not creator_file_created:
                     creator_file_created = True
                     with open(f"{creator_id}_asset_details.txt", "w") as file:
-                        file.write("")  # Clear existing content or create a new file
+                        file.write("") 
                 save_to_text(creator_id, starting_asset_id, asset_details)
         starting_asset_id -= 1
         time.sleep(0)  # Optional: Add a delay to avoid rate limiting or making too many requests
