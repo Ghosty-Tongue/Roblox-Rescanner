@@ -33,14 +33,14 @@ def get_asset_details_for_creator_type(asset_id, creator_id, creator_type_id):
         save_to_text(creator_id, asset_id, asset_details)
 
 def main():
-    starting_asset_id = 1818  # Replace 1818 with the desired starting asset ID
-    creator_id = 1  # Replace 1 with the desired creator ID
+    starting_asset_id = 1818  # Replace 1818 with the starting asset ID
+    creator_id = 1  # Replace 1 with the creator ID
     creator_type_id = "User"  # Only accepted types are "User" and "Group"
     
     while starting_asset_id > 0:
         get_asset_details_for_creator_type(starting_asset_id, creator_id, creator_type_id)
         starting_asset_id -= 1
-        time.sleep(0.5)  # Sleep for 0.5 seconds
+        time.sleep(0.5)
 
 if __name__ == "__main__":
     main()
